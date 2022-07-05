@@ -29,10 +29,8 @@ function App() {
       try {
         const response = await axios.post(url);
         const response2 = await axios.post(url2);
-        console.log("data", response.data)
         setDevices(response.data.makineList)
         setDegerler(response2.data.makineList)
-        console.log("degerler", response2.data)
         setSayi(response.data.makineList.length)
       }
       catch (err) {

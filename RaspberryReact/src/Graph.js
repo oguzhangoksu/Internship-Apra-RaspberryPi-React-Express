@@ -37,31 +37,21 @@ const Graph = (props) => {
                     ramTotal: deger.ramMiktari.memTotal / 1000000,
                     diskSize: deger.diskKapasite.diskSize,
                     diskSizeAvaliable: deger.diskKapasite.diskSizeAvaliable,
-
-
-
-                })
-                
+                })    
             }
         })
-        
         setData(_data);
-
     }
-
+    
     function divideCurrent() {
         var _dataCurrent = []
         props.devices.map((device) => {
             if (device.makineAdi === name) {
                 _dataCurrent.push(device);
                 ram=device.ramMiktari.memTotal/1000000
-            }
-           
+            }  
         })
-
         setCurentData(_dataCurrent)
-        console.log("_datacurrent", _dataCurrent)
-
     }
     
     return (
@@ -95,10 +85,7 @@ const Graph = (props) => {
                         } type="number"/>
                     <Tooltip />
                 </LineChart>
-
-
             </div >
-
             <Card>
                 <Card.Content header='Enjeksiyon2' />
                 <Card.Content className='.ui.card.content.description'
@@ -107,8 +94,6 @@ const Graph = (props) => {
                 <Card.Content extra>
                 </Card.Content>
             </Card>
-
-
         </div>
     )
 }
