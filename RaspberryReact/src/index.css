@@ -17,9 +17,10 @@ code {
 
 .ui.card{
   width:22% !important;
-  margin:0px !important;
+  margin:10px !important;
   height:30% !important;
   min-width: 22% !important;
+  color: blue;
 }
 
 .containerDiv{
@@ -30,3 +31,22 @@ code {
   gap:10px;
 }
 
+.ui.card>.content>.description{
+  display:flex !important;
+  flex-direction: row !important;
+}
+.containerCard{
+  display:flex;
+  flex-direction: row;
+  
+  margin:10px;
+  margin-left: 150px;
+  gap:10px;
+}
+.ui.header{
+  margin-top: 20px !important;
+  font-size: 40px !important;
+  text-align: center;
+
+
+}

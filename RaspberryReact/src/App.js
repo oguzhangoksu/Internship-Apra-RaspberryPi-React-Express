@@ -6,6 +6,8 @@ import Enjeksiyon2 from './Enjeksiyon2';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css'
 import Enjeksiyon1 from './Enjeksiyon1';
+import Graph from './Graph';
+
 
 var url = `http://localhost:3005`
 var url2 = `http://localhost:3005/degerler`
@@ -67,6 +69,7 @@ function App() {
     setRam(_ram);
     setWifi(_wifi);
     setDisk(_disk);
+   
   }
 
   
@@ -74,12 +77,13 @@ function App() {
 
 
   return (
-    <div className='Bölüm'>
+    <div >
       <BrowserRouter>
+
         <Routes>
           <Route exact path="/" element={<CardLink cpu={cpu} isimler={isimler} sayi={sayi} ram={ram} wifi={wifi} disk={disk} />}></Route>
-          <Route exact path="/Enjeksiyon1" element={<Enjeksiyon1 degerler={degerler} devices={devices}/>}/>
-          <Route exact path="/Enjeksiyon2" element={<Enjeksiyon2 degerler={degerler} devices={devices}/>}/>
+          <Route exact path="/:name" element={<Graph degerler={degerler} devices={devices}/>}/>
+          
         </Routes>
       </BrowserRouter>
     </div>
