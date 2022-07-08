@@ -9,7 +9,6 @@ const CardLink = (props) => {
     var donecek = []
 
 
-
     for (var i = 0; i < props.sayi; i++) {
       donecek.push(
 
