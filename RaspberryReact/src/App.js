@@ -2,11 +2,11 @@ import axios from 'axios';
 import './index.css';
 import { useEffect, useState } from 'react';
 import CardLink from './CardLink';
-import Enjeksiyon2 from './Enjeksiyon2';
 import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css'
-import Enjeksiyon1 from './Enjeksiyon1';
+
 import Graph from './Graph';
+
 
 
 var url = `http://localhost:3005`
@@ -29,8 +29,10 @@ function App() {
       try {
         const response = await axios.post(url);
         const response2 = await axios.post(url2);
+        console.log("data", response.data)
         setDevices(response.data.makineList)
         setDegerler(response2.data.makineList)
+        console.log("degerler", response2.data)
         setSayi(response.data.makineList.length)
       }
       catch (err) {
@@ -75,11 +77,11 @@ function App() {
 
 
   return (
-    <div >
+    <div className='body'>
       <BrowserRouter>
+        <Routes> 
 
-        <Routes>
-          <Route exact path="/" element={<CardLink cpu={cpu} isimler={isimler} sayi={sayi} ram={ram} wifi={wifi} disk={disk} />}></Route>
+          <Route exact path="/" element={<CardLink devices={devices} cpu={cpu} isimler={isimler} sayi={sayi} ram={ram} wifi={wifi} disk={disk} />}></Route>
           <Route exact path="/:name" element={<Graph degerler={degerler} devices={devices}/>}/>
           
         </Routes>

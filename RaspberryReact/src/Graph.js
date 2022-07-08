@@ -9,7 +9,7 @@ const Graph = (props) => {
     const { name } = useParams();
     const [data, setData] = useState([]);
     const [currentData, setCurentData] = useState([]);
-    var ram;
+
 
     const description = [
         'Cpu Sıcaklık:' + currentData[0]?.cpuSicaklik,
@@ -37,34 +37,35 @@ const Graph = (props) => {
                     ramTotal: deger.ramMiktari.memTotal / 1000000,
                     diskSize: deger.diskKapasite.diskSize,
                     diskSizeAvaliable: deger.diskKapasite.diskSizeAvaliable,
-                })    
+                })
+                
             }
         })
         setData(_data);
     }
-    
+
     function divideCurrent() {
         var _dataCurrent = []
         props.devices.map((device) => {
             if (device.makineAdi === name) {
                 _dataCurrent.push(device);
-                ram=device.ramMiktari.memTotal/1000000
-            }  
+               
+            }
+           
         })
+
         setCurentData(_dataCurrent)
+        console.log("_datacurrent", _dataCurrent)
     }
     
     return (
 
-        <div style={{
-            display: "flex",
-
-        }}>
+        <div className='containerGraph'>
             <div style={{
                 flexDirection: "column",
                 fontSize: 15
             }}>
-
+                
                 Cpu Sıcaklık
                 <LineChart width={1000} height={300} data={data} margin={{ top: 10, right: 20, bottom: 5, left: 30 }}>
                     <Line type="monotone" dataKey="cpu" stroke="#8884d8" />
@@ -73,10 +74,8 @@ const Graph = (props) => {
                     <YAxis />
                     <Tooltip />
                 </LineChart>
-
-
+            
                 Kullanılan Ram('MB')
-
                 <LineChart width={1000} height={300} data={data} margin={{ top: 10, right: 20, bottom: 5, left: 30 }}>
                     <Line type="monotone" dataKey="ramUsed" stroke="#8884d8" />
                     <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
@@ -87,7 +86,7 @@ const Graph = (props) => {
                 </LineChart>
             </div >
             <Card>
-                <Card.Content header='Enjeksiyon2' />
+                <Card.Content header={name} />
                 <Card.Content className='.ui.card.content.description'
                     description={description}
                 />

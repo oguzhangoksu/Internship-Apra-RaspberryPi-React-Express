@@ -22,6 +22,9 @@ code {
   min-width: 22% !important;
   color: blue;
 }
+.ui.menu{
+  min-height:4.85714286em !important;
+}
 
 .containerDiv{
   display: flex;
@@ -29,6 +32,7 @@ code {
   flex-wrap: wrap;
   margin:10px;
   gap:10px;
+  align-content: center;
 }
 
 .ui.card>.content>.description{
@@ -38,10 +42,11 @@ code {
 .containerCard{
   display:flex;
   flex-direction: row;
-  
+  position: relative;
   margin:10px;
-  margin-left: 150px;
+  margin-left: 300px;
   gap:10px;
+
 }
 .ui.header{
   margin-top: 20px !important;
@@ -49,4 +54,64 @@ code {
   text-align: center;
 
 
+}
+.items{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 10px;
+  grid-gap:10px;
+  gap:10px;
+}
+.item{
+  max-width: 100%;
+  position: relative;
+  margin:1rem ;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  border: 1px solid rgb(34, 36, 38,.15);
+  box-shadow: 0 1px 2px 0 rgb(34 36 38 / 15%) ;
+  border-radius: 0.28571429rem;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+
+
+}
+.itemOnline{
+  max-width: 100%;
+  position: relative;
+  margin:1rem ;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  border: 1px solid rgb(34, 36, 38,.15);
+  box-shadow: 0 1px 2px 0 rgb(34 36 38 / 15%) ;
+  border-radius: 0.28571429rem;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  background-color: greenyellow;
+
+}
+.itemOffline{
+  max-width: 100%;
+  position: relative;
+  margin:1rem ;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  border: 1px solid rgb(34, 36, 38,.15);
+  box-shadow: 0 1px 2px 0 rgb(34 36 38 / 15%) ;
+  border-radius: 0.28571429rem;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+  background-color: red;
+
+}
+
+
+.containerGraph{
+
+display:flex
 }
