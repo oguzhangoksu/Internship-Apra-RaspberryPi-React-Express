@@ -47,7 +47,6 @@ function App() {
   }, [devices])
   
 
-
   function divide(devices) {
     var _cpu = [];
     var _isimler = [];
@@ -67,10 +66,7 @@ function App() {
     setRam(_ram);
     setWifi(_wifi);
     setDisk(_disk);
-   
   }
-
-
   return (
     
       <BrowserRouter>
@@ -80,9 +76,6 @@ function App() {
           
         </Routes>
       </BrowserRouter>
-    
   );
-
 }
-
 export default App;

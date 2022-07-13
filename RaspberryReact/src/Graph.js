@@ -10,7 +10,6 @@ const Graph = (props) => {
     const [data, setData] = useState([]);
     const [currentData, setCurentData] = useState([]);
 
-
     const description = <>
         <p style={{ color: 'black' }}>Cpu Sıcaklık:{(currentData[0]?.cpuSicaklik)?.toFixed(2)}°C </p>
         <p style={{ color: 'black' }}>Disk Kapasite:{(currentData[0]?.diskKapasite?.diskSize / 1000000000)?.toFixed(2)} GB</p>
@@ -37,16 +36,10 @@ const Graph = (props) => {
                     ramTotal: deger.ramMiktari.memTotal / 1000000,
                     diskSize: deger.diskKapasite.diskSize,
                     diskSizeAvaliable: deger.diskKapasite.diskSizeAvaliable,
-
-
-
                 })
-
             }
         })
-
         setData(_data);
-
     }
 
     function divideCurrent() {
@@ -56,21 +49,17 @@ const Graph = (props) => {
                 _dataCurrent.push(device);
 
             }
-
         })
-
         setCurentData(_dataCurrent)
         console.log("_datacurrent", _dataCurrent)
     }
 
     return (
-
         <div className='containerGraph'>
             <div style={{
                 flexDirection: "column",
                 fontSize: 15
             }}>
-
                 Cpu Sıcaklık
                 <LineChart width={1000} height={300} data={data} margin={{ top: 10, right: 20, bottom: 5, left: 30 }}>
                     <Line type="monotone" dataKey="cpu" stroke="#8884d8" />
@@ -79,10 +68,7 @@ const Graph = (props) => {
                     <YAxis />
                     <Tooltip />
                 </LineChart>
-
-
                 Kullanılan Ram('MB')
-
                 <LineChart width={1000} height={300} data={data} margin={{ top: 10, right: 20, bottom: 5, left: 30 }}>
                     <Line type="monotone" dataKey="ramUsed" stroke="#8884d8" />
                     <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
@@ -91,8 +77,6 @@ const Graph = (props) => {
                     } type="number" />
                     <Tooltip />
                 </LineChart>
-
-
             </div >
             <div style={{ display: "grid" }}>
                 <Card >
@@ -109,8 +93,6 @@ const Graph = (props) => {
                     </button>
                 </a>
             </div>
-
-
         </div>
     )
 }
