@@ -8,9 +8,10 @@ const Cihazlar = (props) => {
   return (
     <>
       <div style={{
-        "textAlign": "center",
+        "textAlign": "left",
         "fontSize": "200%",
-        "margin": "10px"
+        "margin": "20px",
+        "fontSize":"25px"
       }}> Bütün cihazlar </div>
       <div className='items'>
         {allDevices.map((device) => {

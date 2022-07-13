@@ -1,4 +1,3 @@
-
 import './index.css'
 import { Card, Header } from 'semantic-ui-react'
 import Cihazlar from './Cihazlar'
@@ -9,31 +8,37 @@ const CardLink = (props) => {
     var donecek = []
 
 
+
     for (var i = 0; i < props.sayi; i++) {
       donecek.push(
 
         <Card className='ui.card'
-          as='a'//tıklanabilir özellik katıyo bir bak
+          as='a'
           href={props.isimler[i]}
           header={props.isimler[i]}
 
-          description={"Cpu sıcaklık:" + props?.cpu[i] + "," +
-            "Toplam ram:(MB)" + props?.ram[i]?.memTotal / 1000000 + "," +
-            "Kullanılan Ram:(MB)" + props?.ram[i]?.memUsed / 1000000 + "," +
-            "Bağlantı:" + props?.wifi[i]?.mevcutBaglanti[0]?.ssid}
-
+          description=
+          {<>
+          <p style={{color:'black'}}>Cpu sıcaklık: {props?.cpu[i]?.toFixed(2)}</p>
+          <p style={{color:'black'}}>Toplam ram:(MB)  {props?.ram[i]?.memTotal / 1000000?.toFixed(2)}</p>
+          <p style={{color:'black'}}>Kullanılan Ram:(MB) {props?.ram[i]?.memUsed / 1000000?.toFixed(2)}</p>
+          <p style={{color:'black'}}>Bağlantı: {props?.wifi[i]?.mevcutBaglanti[0]?.ssid}</p>
+          </>}
+          color="green"
         />
+
+
       )
     }
     return donecek;
   }
-
   return (
-    <div>
+    <div className='root'>
       <Cihazlar devices={props.devices}/>
-      <Header className='.ui.header'> Bağlı Cihazlar </Header>
+      <div style={{"textAlign":"left",
+                      "margin":"20px",
+                      "fontSize":"25px"}}> Bağlı Cihazlar </div>
       <div className='containerDiv'>
-
         {multiCard()}
       </div>
     </div>

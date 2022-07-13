@@ -77,16 +77,15 @@ function App() {
 
 
   return (
-    <div className='body'>
+    
       <BrowserRouter>
         <Routes> 
-
           <Route exact path="/" element={<CardLink devices={devices} cpu={cpu} isimler={isimler} sayi={sayi} ram={ram} wifi={wifi} disk={disk} />}></Route>
           <Route exact path="/:name" element={<Graph degerler={degerler} devices={devices}/>}/>
           
         </Routes>
       </BrowserRouter>
-    </div>
+    
   );
 
 }
