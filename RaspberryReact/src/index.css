@@ -28,11 +28,11 @@ body{
 
 
 .ui.card{
-  width:22% !important;
+  width:100% !important;
   margin:10px !important;
   height:30% !important;
   min-width: 22% !important;
-  color: blue;
+  
 }
 .ui.menu{
   min-height:4.85714286em !important;
@@ -40,13 +40,11 @@ body{
 
 .containerDiv{
   display: flex;
-  
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: row ;
   margin:10px;
   gap:10px;
   align-items: center;
-  place-content:center;
+  place-content: center;
 }
 .ui.card>.content, .ui.cards>.card>.content{
   background-color: rgb(162, 229, 224) !important;
@@ -57,8 +55,6 @@ body{
   text-align: center;
   
 }
-
-
 .containerCard{
   display:flex;
   flex-direction: row;
@@ -66,15 +62,11 @@ body{
   margin:10px;
   margin-left: 300px;
   gap:10px;
-  
-
 }
 .ui.header{
   margin-top: 20px !important;
   font-size: 40px !important;
   text-align: center;
-
-
 }
 .items{
   display: flex;
@@ -134,7 +126,14 @@ body{
 
 }
 
-
+.ui.button, .ui.buttons .button, .ui.buttons .or{
+  width: 80%;
+  height: 40%;
+  margin-left: 35px !important;
+  
+}
 .containerGraph{
 display:flex;
+place-content:center;
+margin-top: 5%;
 }

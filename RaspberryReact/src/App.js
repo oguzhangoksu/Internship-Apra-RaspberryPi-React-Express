@@ -7,8 +7,6 @@ import 'semantic-ui-css/semantic.min.css'
 
 import Graph from './Graph';
 
-
-
 var url = `http://localhost:3005`
 var url2 = `http://localhost:3005/degerler`
 
@@ -71,9 +69,6 @@ function App() {
     setDisk(_disk);
    
   }
-
-  
- 
 
 
   return (

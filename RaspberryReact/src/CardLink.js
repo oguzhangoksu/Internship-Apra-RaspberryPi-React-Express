@@ -7,8 +7,6 @@ const CardLink = (props) => {
     console.log("multicard", props)
     var donecek = []
 
-
-
     for (var i = 0; i < props.sayi; i++) {
       donecek.push(
 
@@ -19,15 +17,13 @@ const CardLink = (props) => {
 
           description=
           {<>
-          <p style={{color:'black'}}>Cpu sıcaklık: {props?.cpu[i]?.toFixed(2)}</p>
-          <p style={{color:'black'}}>Toplam ram:(MB)  {props?.ram[i]?.memTotal / 1000000?.toFixed(2)}</p>
-          <p style={{color:'black'}}>Kullanılan Ram:(MB) {props?.ram[i]?.memUsed / 1000000?.toFixed(2)}</p>
+          <p style={{color:'black'}}>Cpu sıcaklık: {props?.cpu[i]?.toFixed(2)}°C</p>
+          <p style={{color:'black'}}>Toplam ram:  {(props?.ram[i]?.memTotal / 1000000)?.toFixed(2)} MB</p>
+          <p style={{color:'black'}}>Kullanılan Ram: {(props?.ram[i]?.memUsed / 1000000)?.toFixed(2)} MB</p>
           <p style={{color:'black'}}>Bağlantı: {props?.wifi[i]?.mevcutBaglanti[0]?.ssid}</p>
           </>}
           color="green"
         />
-
-
       )
     }
     return donecek;
@@ -45,7 +41,5 @@ const CardLink = (props) => {
   )
 
 }
-
-
 
 export default CardLink;
